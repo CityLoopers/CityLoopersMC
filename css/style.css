@@ -84,23 +84,6 @@ header {
         0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
-th,
-td {
-    padding: 2.5%;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-tr:nth-child(1) {
-    border-bottom: solid var(--grey) thin;
-}
-
-tr:nth-child(1) td:nth-child(2) {
-    border-right: 1px solid transparent;
-}
-
 .hideextra {
     white-space: nowrap;
     overflow: hidden;
@@ -149,3 +132,31 @@ tr:nth-child(1) td:nth-child(2) {
     border-radius: 100px;
 }
 
+/* LINK ANIMATION */
+a {
+    color: #6300EE;
+    text-decoration: none;
+}
+
+a {
+    background:
+            linear-gradient(
+                    to right,
+                    rgb(255, 255, 255),
+                    rgb(255, 255, 255)
+            ),
+            linear-gradient(
+                    to right,
+                    rgb(99, 0, 238),
+                    rgb(99, 0, 238),
+                    rgb(99, 0, 238)
+            );
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+a:hover {
+    background-size: 0 3px, 100% 3px;
+}
