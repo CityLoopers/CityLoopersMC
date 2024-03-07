@@ -9,7 +9,50 @@
 }
 
 :root {
-    /* Define colors */
+
+    /** CSS PRIMARY COLORS */
+--clr-primary-a0: #6200ee;
+--clr-primary-a10: #510eba;
+--clr-primary-a20: #3f1288;
+--clr-primary-a30: #2e1259;
+--clr-primary-a40: #1c0e2e;
+/** CSS ACCENT COLORS */
+--clr-accent-a0: #00eeda;
+--clr-accent-a10: #1ebaaa;
+--clr-accent-a20: #22887d;
+--clr-accent-a30: #1f5952;
+--clr-accent-a40: #162e2b;
+/** CSS SEMANTIC COLORS */
+--clr-danger-a0: #b41c2b;
+--clr-success-a0: #009f42;
+--clr-warning-a0: #cc8800;
+--clr-info-a0: #388cfa;
+/** CSS NEUTRAL COLORS */
+--clr-neutral-a0: #ffffff;
+--clr-neutral-a10: #c6c6c6;
+--clr-neutral-a20: #919191;
+--clr-neutral-a30: #5e5e5e;
+--clr-neutral-a40: #303030;
+--clr-neutral-a50: #000000;
+
+
+/** CSS DARK THEME PRIMARY COLORS */ 
+--color-primary-100:  #6200ee;
+--color-primary-200:  #7b31f1;
+--color-primary-300:  #914ef4;
+--color-primary-400:  #a468f6;
+--color-primary-500:  #b581f9;
+--color-primary-600:  #c69afb; 
+
+/** CSS DARK THEME SURFACE COLORS */ 
+--color-surface-100:  #121212;
+--color-surface-200:  #282828;
+--color-surface-300:  #3f3f3f;
+--color-surface-400:  #575757;
+--color-surface-500:  #717171;
+--color-surface-600:  #8b8b8b; 
+
+/* Define colors */
     --primary-color: #ffd500;
     --primary-text-color: #333333;
     --secondary-text-color: #6200ee;
@@ -31,6 +74,16 @@ body {
     color: var(--primary-text-color);
 }
 
+footer {
+    background-color: #ececec;
+    padding: 3rem;
+    border-radius: 1rem;
+    margin-top: 1rem;
+  }
+
+  footer .box{
+    background-color: #ececec;
+  }
 .nav {
     list-style: none;
     margin: 0;
@@ -66,6 +119,7 @@ header {
 
 /* Grid Styles */
 .grid-container {
+    margin-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
