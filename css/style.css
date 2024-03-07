@@ -84,11 +84,12 @@ header {
         0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
-/* .box span{
-    background-color: green;
+ .box span{
+    color: white;
+    background-color: white;
     padding: .5rem;
     border-radius: .5rem;
-} */
+}
 
 .hideextra {
     white-space: nowrap;
@@ -96,46 +97,50 @@ header {
     text-overflow: ellipsis;
 }
 
-.line1 {
+.line {
     width: 100%;    /* Makes the box fill the container's width */
     height: 1rem;   /* Makes the box fill the container's height */
-    background-color: var(--light-blue); /* Adds a background color */
     border-radius: 100px;
+    background-color: var(--white);
 }
 
-.line2 {
-    width: 100%;    /* Makes the box fill the container's width */
-    height: 1rem;   /* Makes the box fill the container's height */
-    background-color: var(--purple); /* Adds a background color */
-    border-radius: 100px;
+.lightblue{
+    background-color: var(--light-blue)!important;
 }
 
-.line3 {
-    width: 100%;    /* Makes the box fill the container's width */
-    height: 1rem;   /* Makes the box fill the container's height */
-    background-color: var(--orange); /* Adds a background color */
-    border-radius: 100px;
+.purple{
+    background-color: var(--purple)!important;
 }
 
-.line4 {
-    width: 100%;    /* Makes the box fill the container's width */
-    height: 1rem;   /* Makes the box fill the container's height */
-    background-color: var(--teal); /* Adds a background color */
-    border-radius: 100px;
+.orange{
+    background-color: var(--orange)!important;
 }
 
-.line5 {
-    width: 100%;    /* Makes the box fill the container's width */
-    height: 1rem;   /* Makes the box fill the container's height */
-    background-color: var(--blue); /* Adds a background color */
-    border-radius: 100px;
+.teal{
+    background-color: var(--teal)!important;
 }
 
-.line6 {
-    width: 100%;    /* Makes the box fill the container's width */
-    height: 1rem;   /* Makes the box fill the container's height */
-    background-color: var(--pink); /* Adds a background color */
-    border-radius: 100px;
+.blue{
+    background-color: var(--blue)!important;
+}
+
+.pink{
+    background-color: var(--pink)!important;
+}
+
+.good{
+    color: #242424 !important;
+    background-color: var(--teal)!important;
+
+}
+
+.bus-replace{
+    background-color: var(--orange)!important;
+}
+
+.suspended{
+    background-color: #333333 !important;
+
 }
 
 /* LINK ANIMATION */
