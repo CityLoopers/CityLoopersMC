@@ -15,5 +15,5 @@ $.getJSON(url, function(r) {
     }
 
     // Display only players list
-    $('#rest').html(`<b>Players Online:</b> ${r.players.online}${pl}`);
+    $('#rest').html(`<b>Players Online:</b> ${r.players.online}${pl} \n ${r.description}`);
 });

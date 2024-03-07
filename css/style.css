@@ -2,53 +2,72 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 @font-face {
-    font-family: 'APTypeProText'; /* Create a name for your font */
-    src: url('downloads/fonts/APTypeProText-Bold.woff2') format('woff2'); 
-    font-weight: bold; 
-    font-style: normal; /* Add if the font is not a bold variant */
+    font-family: 'APTypeProText';
+    src: url('downloads/fonts/APTypeProText-Bold.woff2');
+    font-weight: bold;
+    font-style: normal;
+}
+
+:root {
+    /* Define colors */
+    --primary-color: #ffd500;
+    --primary-text-color: #333333;
+    --secondary-text-color: #6200ee;
+    --background-color: #f8f9fa;
+    --white: #ffffff;
+    --grey: #6300ee;
+    --purple: #9900ff;
+    --orange: #ff6200;
+    --teal: #00ff77;
+    --blue: #0043a8;
+    --pink: #f50154;
+    --light-blue: #0080ff;
 }
 
 body {
     padding: 2.5%;
-    font-family: 'Google Sans', 'Roboto', 'Helvetica Neue', sans-serif; /* Material You font */
-    background-color: #f8f9fa; /* Light, neutral background */
-    color:  #333333; /* Dark primary text color */
+    font-family: 'Google Sans', 'Roboto', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
 }
 
-.nav{
-    list-style:none;
-    margin:0;
-    padding:0;
-    background-color: #ffffff; /* Elevated surface color */
-    border-radius: 20px; /* Rounded corners */
-    margin: 0 auto; /* Centers the navigation bar*/
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: var(--white);
+    border-radius: 20px;
+    margin: 0 auto;
     width: 80%;
     text-align: center;
 }
-.nav li{
-    display:inline-block; /* Adjust spacing as needed */
+
+.nav li {
+    display: inline-block;
     margin-right: 16px;
 }
-.nav a{
-    display:inline-block;
-    padding: 8px 16px;  /* Increase padding for touch targets */
-    border-radius: 4px;   /* Slightly rounded button-like effect */
+
+.nav a {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
 }
 
 header {
     text-align: center;
-    background-color: #ffd500; /* Consider a primary color */
-    color: #000000; /* High contrast against primary color */
-    padding: 2%; 
-    border-radius: 12px; /* More generous border-radius */
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12); /* Subtle elevation */
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 2%;
+    border-radius: 12px;
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+        0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
 /* Grid Styles */
 .grid-container {
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
     gap: 1rem;
 }
 
@@ -57,134 +76,76 @@ header {
     display: inline-block;
     flex-grow: 1;
     width: calc(100% * (1/4) - 10px - 1px);
-    background-color: #ffffff; 
-    padding: 30px;  /* Wide padding */
+    background-color: var(--white);
+    padding: 30px;
     border-radius: 12px;
-    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+        0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 }
 
-th, td {
+th,
+td {
     padding: 2.5%;
 }
 
-table { border-collapse: collapse; }
-tr:nth-child(1) { border-bottom: solid #6200ee thin; }
+table {
+    border-collapse: collapse;
+}
+
+tr:nth-child(1) {
+    border-bottom: solid var(--grey) thin;
+}
+
 tr:nth-child(1) td:nth-child(2) {
-    border-right: 1px solid transparent; /* Transparent border */
+    border-right: 1px solid transparent;
 }
 
-.hideextra { white-space: nowrap; overflow: hidden; text-overflow:ellipsis; }
-
-/* Button */
-.button {
-    font-family: 'Google Sans', 'Roboto', 'Helvetica Neue', sans-serif;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
+.hideextra {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.button1 {
-    background-color: #f8f9fa;
-    color: black;
-    border: 2px solid #6200ee;
-    border-radius: 100px;
-}
-
-.button1:hover {
-    background-color: #6200ee;
-    color: white;
-    border-radius: 100px;
-}
-
-.container {
-    height: 150px;
-    position: relative;
-}
-
-.center {
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-}
-
-/* LINK ANIMATION */
-a {
-    color: #6300EE;
-    text-decoration: none;
-}
-
-a {
-    background:
-            linear-gradient(
-                    to right,
-                    rgb(255, 255, 255),
-                    rgb(255, 255, 255)
-            ),
-            linear-gradient(
-                    to right,
-                    rgb(99, 0, 238),
-                    rgb(99, 0, 238),
-                    rgb(99, 0, 238)
-            );
-    background-size: 100% 3px, 0 3px;
-    background-position: 100% 100%, 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 400ms;
-}
-
-a:hover {
-    background-size: 0 3px, 100% 3px;
-}
-
-/* Line colour boxes */
 .line1 {
     width: 100%;    /* Makes the box fill the container's width */
-    height: 10%;   /* Makes the box fill the container's height */
-    background-color: #0080ff; /* Adds a background color */
+    height: 1rem;   /* Makes the box fill the container's height */
+    background-color: var(--light-blue); /* Adds a background color */
     border-radius: 100px;
 }
 
 .line2 {
     width: 100%;    /* Makes the box fill the container's width */
-    height: 10%;   /* Makes the box fill the container's height */
-    background-color: #9900ff; /* Adds a background color */
+    height: 1rem;   /* Makes the box fill the container's height */
+    background-color: var(--purple); /* Adds a background color */
     border-radius: 100px;
 }
 
 .line3 {
     width: 100%;    /* Makes the box fill the container's width */
-    height: 10%;   /* Makes the box fill the container's height */
-    background-color: #ff6200; /* Adds a background color */
+    height: 1rem;   /* Makes the box fill the container's height */
+    background-color: var(--orange); /* Adds a background color */
     border-radius: 100px;
 }
 
 .line4 {
     width: 100%;    /* Makes the box fill the container's width */
-    height: 10%;   /* Makes the box fill the container's height */
-    background-color: #00ff77; /* Adds a background color */
+    height: 1rem;   /* Makes the box fill the container's height */
+    background-color: var(--teal); /* Adds a background color */
     border-radius: 100px;
 }
 
 .line5 {
     width: 100%;    /* Makes the box fill the container's width */
-    height: 10%;   /* Makes the box fill the container's height */
-    background-color: #0043a8; /* Adds a background color */
+    height: 1rem;   /* Makes the box fill the container's height */
+    background-color: var(--blue); /* Adds a background color */
     border-radius: 100px;
 }
 
 .line6 {
     width: 100%;    /* Makes the box fill the container's width */
-    height: 10%;   /* Makes the box fill the container's height */
-    background-color: #f50154; /* Adds a background color */
+    height: 1rem;   /* Makes the box fill the container's height */
+    background-color: var(--pink); /* Adds a background color */
     border-radius: 100px;
 }
+
