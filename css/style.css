@@ -159,15 +159,45 @@ header {
     background-color: var(--white);
 }
 
+.station {
+    display: inline-block;
+    width: 6rem;    /* Makes the box fill the container's width */
+    height: 3rem;   /* Makes the box fill the container's height */
+    border-radius: .5rem;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.station h1 {
+    position: relative;
+    margin: 0;
+    margin-top: .25rem;
+}
+
+.text-white {
+    color: white;
+}
+
+.warning {
+    color: white;
+    background-color: var(--clr-warning-a0)!important;
+}
 .lightblue{
+    color: white;
     background-color: var(--light-blue)!important;
+}
+.outline-lightblue{
+    box-shadow:inset 0px 0px 0px 5px var(--light-blue)!important;
+       
 }
 
 .purple{
+    color: white;
     background-color: var(--purple)!important;
 }
 
 .orange{
+    color: white;
     background-color: var(--orange)!important;
 }
 
@@ -176,6 +206,7 @@ header {
 }
 
 .blue{
+    color: white;
     background-color: var(--blue)!important;
 }
 
@@ -226,3 +257,66 @@ a {
 a:hover {
     background-size: 0 3px, 100% 3px;
 }
+
+.dropdown {
+    display: inline-block; /* Change from float: left to display: inline-block */
+    position: relative;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 16px;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+    color: #6300EE;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .dropdown-content {
+    background:
+            linear-gradient(
+                    to right,
+                    rgb(255, 255, 255),
+                    rgb(255, 255, 255)
+            ),
+            linear-gradient(
+                    to right,
+                    rgb(99, 0, 238),
+                    rgb(99, 0, 238),
+                    rgb(99, 0, 238)
+            );
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+
+    display: block; /* Change from display: none to display: block */
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    overflow: hidden;
+    height: 0; /* Set initial height to 0 */
+    transition: height 0.3s ease; /* Add transition effect for height */
+  }
+  
+  .dropdown:hover .dropdown-content {
+    background-size: 0 3px, 100% 3px;
+    height: 275px; /* Set the height to the desired value */
+  }
