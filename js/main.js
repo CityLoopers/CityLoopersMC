@@ -1,30 +1,62 @@
+
+const lines = ['north-south', 'east-west', 'north-west', 'north-east', 'south-east', 'south-west'];
+
+/**
+ * Initialize the navbar with links based on the current page and 'lines' array.
+ *
+ * @param {} 
+ * @return {}
+ */
 window.onload = function () {
-    const navbar = document.getElementById('navbar')
-    const currentPage = window.location.pathname.split('/').pop().split('.').shift(); // Get the name of the current page
-    const isLinePage = currentPage.startsWith('line'); // Check if the page is a line page
-    const lines = ['north-south', 'east-west', 'north-west', 'north-east', 'south-east', 'south-west']; // Define the available lines
-    let nav = `
-            <li>City Loopers</li>
-            <li><a href="${isLinePage ? './' : '../'}index.html" ${currentPage === 'index' ? 'style="font-weight: bold"' : ''}>Home</a></li>
-            <li><a href="${isLinePage ? './' : '../'}status.html" ${currentPage === 'status' ? 'style="font-weight: bold"' : ''}>MRT Status</a></li>
-            <div class="dropdown">
-                <button class="dropbtn">Lines 🞃</button>
-                <div class="dropdown-content">
-    `; // Start building the HTML for the navigation bar
-    for (let i = 0; i < lines.length; i++) { // Iterate over each line
+    const navbar = document.getElementById('navbar');
+    const currentPage = window.location.pathname.split('/').pop().split('.').shift();
+    const isLinePage = currentPage.startsWith('line');
+    const navHTML = ['<li>City Loopers</li>',
+        `<li><a href="${isLinePage ? './' : '../'}index.html" ${currentPage === 'index' ? 'style="font-weight: bold"' : ''}>Home</a></li>`,
+        `<li><a href="${isLinePage ? './' : '../'}status.html" ${currentPage === 'status' ? 'style="font-weight: bold"' : ''}>MRT Status</a></li>`,
+        '<div class="dropdown">',
+        '  <button class="dropbtn">Lines 🞃</button>',
+        '  <div class="dropdown-content">'];
+    for (let i = 0; i < lines.length; ++i) {
         const line = lines[i];
-        const lineName = line.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '); // Get the full line name
-        nav += `<a href="${isLinePage ? './' : '../'}lines/${line}.html"`; // Add an 'a' element for the line, using the correct relative link
-        if (!isLinePage && line === currentPage) { // If the current page is not a line page and the line is the same as the current page, make the 'a' element bold
-            nav += ' style="font-weight: bold"'
-        }
-        nav += `>${lineName} Line</a>`; // Add the full line name to the 'a' element
+        const lineName = line.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        navHTML.push(`<a href="${isLinePage ? './' : '../'}lines/${line}.html" ${line === currentPage ? 'style="font-weight: bold"' : ''}>${lineName} Line</a>`);
     }
-    nav += `
-                </div>
-              </div>`; // Close the 'dropdown-content' div and the 'dropdown' div
-    navbar.innerHTML = nav; // Set the 'innerHTML' property of the 'navbar' element to the complete HTML for the navigation bar
+    navHTML.push('  </div>', '</div>');
+    navbar.innerHTML = navHTML.join('');
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.line-status').forEach(function(lineStatus) {
+        const line = lineStatus.id.split('-')[1]+'-'+lineStatus.id.split('-')[2];
+        console.log(line)
+        const status = getLineStatus(line);
+        lineStatus.className = 'line-status';
+        lineStatus.classList.add(status);
+        lineStatus.textContent = {
+            'good': 'Good Service',
+            'bus-replace': 'Works Alert',
+            'suspended': 'Suspended'
+        }[status];
+    });
+})
+
+/**
+ * Retrieves the status of a given transportation line.
+ *
+ * @param {string} line - the name of the transportation line
+ * @return {string} the status of the transportation line
+ */
+function getLineStatus(line) {
+    // In a real implementation, this would query a SQLite database or make an API request
+    // For now, just return a random status
+    const statuses = ['good', 'bus-replace', 'suspended'];
+    const randomIndex = Math.floor(Math.random() * statuses.length);
+    return statuses[randomIndex];
+}
+
+
 
 
 
