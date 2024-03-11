@@ -20,13 +20,19 @@ window.onload = function () {
     for (let i = 0; i < lines.length; ++i) {
         const line = lines[i];
         const lineName = line.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        addStationElements(line)
         navHTML.push(`<a href="${isLinePage ? './' : '../'}lines/${line}.html" ${line === currentPage ? 'style="font-weight: bold"' : ''}>${lineName} Line</a>`);
     }
     navHTML.push('  </div>', '</div>');
     navbar.innerHTML = navHTML.join('');
 }
 
-
+const footer = document.querySelector('footer');
+if (!footer) {
+  const newFooter = document.createElement('footer');
+  document.body.appendChild(newFooter);
+  footer = newFooter;
+}
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.line-status').forEach(function(lineStatus) {
         const line = lineStatus.id.split('-')[1]+'-'+lineStatus.id.split('-')[2];
@@ -40,7 +46,26 @@ document.addEventListener('DOMContentLoaded', function() {
             'suspended': 'Suspended'
         }[status];
     });
-})
+    footer.innerHTML = `
+    <div class="grid-container ">
+        <div class="box">
+
+        </div>
+        <div class="box">
+            <p>
+                © 2024 City Loopers
+            </p>
+        </div>
+        <div class="box">
+
+        </div>
+      
+    </div>
+`;
+
+},
+
+)
 
 /**
  * Retrieves the status of a given transportation line.
@@ -57,9 +82,77 @@ function getLineStatus(line) {
 }
 
 
+function addStationElements(line) {
+    const linePage = document.getElementById('line-page');
+    if (!linePage) {
+        console.error('Could not find element with id \'line-page\'');
+        return;
+    }
+    const currentPage = window.location.pathname.split('/').pop().split('.').shift();
+    const stationsPromise = getStationsForLine(line);
+    if (!stationsPromise) {
+        console.error(`Could not get promise for stations for line '${line}'`);
+        return;
+    }
+    stationsPromise.then(stations => {
+        if (!stations) {
+            console.error(`Could not find stations for line '${line}'`);
+            return;
+        }
+        const currentLineStations = stations.stations.filter(station => station.line === currentPage);
+        for (const station of currentLineStations) {
+            const stationElement = createStationElement(stations, station);
+            linePage.appendChild(stationElement);
+        }
+    }).catch(error => {
+        console.error(`Error retrieving stations for line '${line}': ${error}`);
+    });
+}
 
+function getStationsForLine(line) {
+    const stationsUrl = `../lines/stations/${line}.json`;
+    return fetch(stationsUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        });
+}
 
+function createStationElement(stations, station) {
+    const stationElement = document.createElement('div');
+    stationElement.className = 'box';
+    const stationCodes = station.code.split(',');
+    for (const code of stationCodes) {
+        const stationCodeDiv = createStationCodeDiv(stations, code);
+        stationElement.appendChild(stationCodeDiv);
+    }
+    const nameHeader = createNameHeader(station);
+    stationElement.appendChild(nameHeader);
+    const descriptionParagraph = createDescriptionParagraph(station);
+    stationElement.appendChild(descriptionParagraph);
+    return stationElement;
+}
 
+function createStationCodeDiv(stations, code) {
+    const stationCodeDiv = document.createElement('div');
+    stationCodeDiv.className = `station ${stations.color}`;
+    const stationCodeHeader = document.createElement('h1');
+    stationCodeHeader.textContent = code.trim();
+    stationCodeDiv.appendChild(stationCodeHeader);
+    return stationCodeDiv;
+}
 
+function createNameHeader(station) {
+    const nameHeader = document.createElement('h1');
+    nameHeader.textContent = station.name;
+    return nameHeader;
+}
 
+function createDescriptionParagraph(station) {
+    const descriptionParagraph = document.createElement('p');
+    descriptionParagraph.textContent = station.description;
+    return descriptionParagraph;
+}
 

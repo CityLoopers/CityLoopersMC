@@ -1,0 +1,83 @@
+{
+    "stations": [
+        {
+            "name": "North Station",
+            "code": "NS1",
+            "description": "The first station on the North-South Line, located in the heart of the city.",
+            "line": "north-south"
+        },
+        {
+            "name": "Oasis",
+            "code": "NS2",
+            "description": "A bustling hub of activity, with plenty of shops and restaurants nearby.",
+            "line": "north-south"
+        },
+        {
+            "name": "Crystal",
+            "code": "NS3",
+            "description": "A tranquil oasis, surrounded by lush greenery.",
+            "line": "north-south"
+        },
+        {
+            "name": "Atlantica",
+            "code": "NS4",
+            "description": "A bustling port city, with plenty of cargo ships coming and going.",
+            "line": "north-south"
+        },
+        {
+            "name": "Aurora Town Hall",
+            "code": "NS5",
+            "description": "The seat of government for the city of Aurora, with a towering clock tower.",
+            "line": "north-south"
+        },
+        {
+            "name": "Marina",
+            "code": "NS6",
+            "description": "A bustling marina, with plenty of boats and restaurants nearby.",
+            "line": "north-south"
+        },
+        {
+            "name": "Kings Cross",
+            "code": "NS7",
+            "description": "A busy intersection, with plenty of cafes and shops nearby.",
+            "line": "north-south"
+        },
+        {
+            "name": "Flinders",
+            "code": "NS8, NE1",
+            "description": "A strategic location, with easy access to trains going east and west.",
+            "line": "north-south"
+        },
+        {
+            "name": "Cave Hill",
+            "code": "NS9",
+            "description": "A dark and mysterious place, rumored to be home to strange creatures.",
+            "line": "north-south"
+        },
+        {
+            "name": "Cave Hill - Violet ",
+            "code": "NS10, NC1",
+            "description": "A deep underground station, accessible only through a secret passage.",
+            "line": "north-south"
+        },
+        {
+            "name": "Yelta",
+            "code": "NS11",
+            "description": "A bustling market town, with plenty of traders and goods available.",
+            "line": "north-south"
+        },
+        {
+            "name": "Fire Village",
+            "code": "NS12",
+            "description": "A bustling center of commerce, with many artisans and traders calling it home.",
+            "line": "north-south"
+        },
+        {
+            "name": "Snowy",
+            "code": "NS13",
+            "description": "A small, snowy village, with many homes and businesses made from snow and ice.",
+            "line": "north-south"
+        }
+    ],
+    "color": "lightblue"
+}
