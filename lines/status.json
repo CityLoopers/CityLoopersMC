@@ -1,0 +1,7 @@
+{
+    "lines": [
+      { "name": "east-west", "status": "good", "description": "The first station on the North-South Line.", "line": "south-west" },
+      { "name": "north-south", "status": "bus-replace", "description": "The North South Line for City Loopers MRT is a new rail line that will run entirely underground, connecting the towns of Sunville and Cranston. The line will have 25 new stations, each with a unique design and theme. The themes are based on various biomes, animals, or structures that can be found in Minecraft. The line is being constructed using creative technology and engineering, such as minecarts, rails, pistons, levers, buttons, and redstone lamps. The line will feature redstone signalling and iron door barriers to ensure safety and efficiency. The line is scheduled to open in late 2024, and will provide a direct airport connection via the underground Elytra Launchpad, which will launch passengers into the sky using fireworks.", "title": "While construction work takes place on the North South Line, trains are being replaced by buses." }
+    ]
+  }
+  
