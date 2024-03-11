@@ -14,6 +14,8 @@ window.onload = function () {
     const navHTML = ['<li>City Loopers</li>',
         `<li><a href="${isLinePage ? './' : '../'}index.html" ${currentPage === 'index' ? 'style="font-weight: bold"' : ''}>Home</a></li>`,
         `<li><a href="${isLinePage ? './' : '../'}status.html" ${currentPage === 'status' ? 'style="font-weight: bold"' : ''}>MRT Status</a></li>`,
+        `<li><a href="${isLinePage ? './' : '../'}apply.html" ${currentPage === 'apply' ? 'style="font-weight: bold"' : ''}>Apply</a></li>`,
+        `<li><a href="http://194.153.216.151:25729/"}>Map</a></li>`,
         '<div class="dropdown">',
         '  <button class="dropbtn">Lines 🞃</button>',
         '  <div class="dropdown-content">'];
