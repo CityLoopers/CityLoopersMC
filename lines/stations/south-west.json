@@ -1,0 +1,7 @@
+{
+  "stations": [
+    { "name": "South Station", "code": "SW1", "description": "The first station on the North-South Line.", "line": "south-west" },
+    { "name": "West Station", "code": "SW2", "description": "The second station on the North-South Line.", "line": "south-west" }
+  ],
+  "color": "pink"
+}

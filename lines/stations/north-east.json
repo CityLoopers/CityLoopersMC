@@ -1,0 +1,17 @@
+{
+    "stations": [
+        {
+            "name": "North Station",
+            "code": "NE1",
+            "description": "The first station on the North-South Line.",
+            "line": "north-east"
+        },
+        {
+            "name": "East Station",
+            "code": "NE2",
+            "description": "The second station on the North-South Line.",
+            "line": "north-east"
+        }
+    ],
+    "color": "teal"
+}
