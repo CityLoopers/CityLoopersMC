@@ -30,11 +30,6 @@ window.onload = function () {
 }
 
 const footer = document.querySelector('footer');
-if (!footer) {
-  const newFooter = document.createElement('footer');
-  document.body.appendChild(newFooter);
-  footer = newFooter;
-}
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.line-status').forEach(function(lineStatus) {
         const line = lineStatus.id.split('-')[1]+'-'+lineStatus.id.split('-')[2];
@@ -157,4 +152,5 @@ function createDescriptionParagraph(station) {
     descriptionParagraph.textContent = station.description;
     return descriptionParagraph;
 }
+
 
