@@ -1,75 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>MRT Status</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MRT Status - City Loopers</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="./images/resources/Favicon.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="City Loopers MRT status">
     <script src="./js/main.js" defer></script>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 text-gray-800">
 
-<nav class="bg-white shadow-lg">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between">
-            <div class="flex space-x-7">
-                <div>
-                    <!-- Website Logo -->
-                    <a href="/" class="flex items-center py-4 px-2">
-                        <img src="./images/resources/Favicon.png" alt="Logo" class="h-8 w-8 mr-2">
-                        <span class="font-semibold text-gray-500 text-lg">City Loopers</span>
-                    </a>
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="index.html" class="flex items-center py-4 px-2">
+                            <img src="./images/resources/Favicon.png" alt="Logo" class="h-8 w-8 mr-2">
+                            <span class="font-semibold text-gray-500 text-lg">City Loopers</span>
+                        </a>
+                    </div>
                 </div>
-                <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1" id="navbar">
+                    <!-- Navbar links are inserted here by main.js -->
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="container mx-auto p-4">
-    <h1 class="text-4xl font-bold text-center my-8">MRT Status</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <div class="h-4 bg-blue-400 rounded-full"></div>
-            <h2 class="text-2xl font-bold mt-4">North South Line</h2>
-            <p class="text-lg font-bold"><span id="line-north-south" class="line-status"></span></p>
+    <header class="bg-gray-800 text-white text-center py-12">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold">MRT Line Status</h1>
+            <p class="text-lg mt-2">Live updates on all our train lines.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <div class="h-4 bg-purple-600 rounded-full"></div>
-            <h2 class="text-2xl font-bold mt-4">East West Line</h2>
-            <p class="text-lg font-bold"><span id="line-east-west" class="line-status"></span></p>
-            <p>Buses replace trains on the East West Line <a href="./lines/east-west.html" class="text-blue-500 hover:underline">More Info</a></p>
+    </header>
+
+    <main class="container mx-auto p-8">
+        <div class="bg-white p-8 rounded-lg shadow-lg">
+            <div class="space-y-6">
+                <!-- North South Line -->
+                <div class="flex items-center justify-between p-4 rounded-lg border-l-8 border-blue-400 bg-gray-50">
+                    <h2 class="text-2xl font-bold">North South Line</h2>
+                    <div class="text-lg font-semibold" id="line-status-north-south">
+                        <!-- Status will be inserted here -->
+                    </div>
+                </div>
+                <!-- East West Line -->
+                <div class="flex items-center justify-between p-4 rounded-lg border-l-8 border-purple-600 bg-gray-50">
+                    <h2 class="text-2xl font-bold">East West Line</h2>
+                    <div class="text-lg font-semibold" id="line-status-east-west">
+                        <!-- Status will be inserted here -->
+                    </div>
+                </div>
+                <!-- North West Line -->
+                <div class="flex items-center justify-between p-4 rounded-lg border-l-8 border-orange-500 bg-gray-50">
+                    <h2 class="text-2xl font-bold">North West Line</h2>
+                    <div class="text-lg font-semibold" id="line-status-north-west">
+                        <!-- Status will be inserted here -->
+                    </div>
+                </div>
+                <!-- North East Line -->
+                <div class="flex items-center justify-between p-4 rounded-lg border-l-8 border-teal-500 bg-gray-50">
+                    <h2 class="text-2xl font-bold">North East Line</h2>
+                    <div class="text-lg font-semibold" id="line-status-north-east">
+                        <!-- Status will be inserted here -->
+                    </div>
+                </div>
+                <!-- South East Line -->
+                <div class="flex items-center justify-between p-4 rounded-lg border-l-8 border-blue-600 bg-gray-50">
+                    <h2 class="text-2xl font-bold">South East Line</h2>
+                    <div class="text-lg font-semibold" id="line-status-south-east">
+                        <!-- Status will be inserted here -->
+                    </div>
+                </div>
+                <!-- South West Line -->
+                <div class="flex items-center justify-between p-4 rounded-lg border-l-8 border-pink-500 bg-gray-50">
+                    <h2 class="text-2xl font-bold">South West Line</h2>
+                    <div class="text-lg font-semibold" id="line-status-south-west">
+                        <!-- Status will be inserted here -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <div class="h-4 bg-orange-500 rounded-full"></div>
-            <h2 class="text-2xl font-bold mt-4">North West Line</h2>
-            <p class="text-lg font-bold"><span id="line-north-west" class="line-status"></span></p>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-8">
+        <div class="max-w-6xl mx-auto px-4 py-6 text-center">
+            <p>&copy; 2024 City Loopers. All Rights Reserved.</p>
         </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <div class="h-4 bg-teal-500 rounded-full"></div>
-            <h2 class="text-2xl font-bold mt-4">North East Line</h2>
-            <p class="text-lg font-bold"><span id="line-north-east" class="line-status"></span></p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <div class="h-4 bg-blue-600 rounded-full"></div>
-            <h2 class="text-2xl font-bold mt-4">South East Line</h2>
-            <p class="text-lg font-bold"><span id="line-south-east" class="line-status"></span></p>
-        </div>
-        <div class="bg-white p-6 rounded-lg shadow-lg">
-            <div class="h-4 bg-pink-500 rounded-full"></div>
-            <h2 class="text-2xl font-bold mt-4">South West Line</h2>
-            <p class="text-lg font-bold"><span id="line-south-west" class="line-status"></span></p>
-        </div>
-    </div>
-</div>
-<footer class="bg-white shadow-lg mt-8">
-    <div class="max-w-6xl mx-auto px-4 py-2 text-center text-gray-500">
-        <p>&copy; 2024 City Loopers</p>
-    </div>
-</footer>
+    </footer>
+
 </body>
 </html>
