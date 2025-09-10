@@ -3,23 +3,62 @@
 <head>
     <meta charset="utf-8">
     <title>MRT Status</title>
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="icon" href="images/resources/Favicon.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../images/resources/Favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="404 - City Loopers">
     <script src="../js/main.js" defer></script>
 </head>
-<body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<ul class="nav" id="navbar"> </ul>
-<div class="grid-container"><div class="hero"><div class="line purple"></div><div class="line lightblue"></div><h1>Town Hall Upgrade Project</h1><p>This page contains information about the Town Hall Upgrade Project.</p></div>
-<div class="box"><p>Intiating in early 2024, The Town Hall Upgrade Project is a significant development in the city of Aurora, focusing on the Town Hall interchange station. This pivotal project involves a comprehensive upgrade, including a total reconstruction of the North South station and the establishment and completion of the East West Line at Town Hall.
-</p>
-    <p>Following an extensive rebuild and the excavation of new, deeper tunnels, the North South Line has now resumed operations at the Town Hall station. This marks a milestone in the city's infrastructure enhancement, promising improved connectivity and convenience for its residents.</p></div>
-    <div class="box"><p>The newly built station boasts advanced facilities and improved accessibility, ensuring a seamless interchange between the North South and East West Lines. The completion of the East West Line is anticipated to further streamline citywide transportation and foster economic growth by connecting key districts within Aurora.
-    </p></div>
-    <div class="box"><p>The North South Line at Town Hall station now boasts a range of state-of-the-art amenities following its reopening, including high-speed escalators, interactive information kiosks, an automated ticketing system, and robust security measures. These enhancements have significantly elevated the station's functionality and safety standards. The East West Line is expected to be fully operational by late 2025, which will further enhance Aurora's transportation infrastructure and stimulate economic growth by linking critical urban areas.</p></div>
-<div class="box"><picture><img src="images/resources/townhall.png"></picture></div></div>
+<body class="bg-gray-100">
 
+<nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+                <div>
+                    <!-- Website Logo -->
+                    <a href="/" class="flex items-center py-4 px-2">
+                        <img src="../images/resources/Favicon.png" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="font-semibold text-gray-500 text-lg">City Loopers</span>
+                    </a>
+                </div>
+                <!-- Primary Navbar items -->
+                <div class="hidden md:flex items-center space-x-1" id="navbar">
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container mx-auto p-4">
+    <div class="bg-white p-6 rounded-lg shadow-lg">
+        <div class="flex space-x-2">
+            <div class="h-4 bg-purple-600 rounded-full w-1/2"></div>
+            <div class="h-4 bg-blue-500 rounded-full w-1/2"></div>
+        </div>
+        <h1 class="text-2xl font-bold mt-4">Town Hall Upgrade Project</h1>
+        <p>This page contains information about the Town Hall Upgrade Project.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p>Initiating in early 2024, The Town Hall Upgrade Project is a significant development in the city of Aurora, focusing on the Town Hall interchange station. This pivotal project involves a comprehensive upgrade, including a total reconstruction of the North South station and the establishment and completion of the East West Line at Town Hall.</p>
+            <p>Following an extensive rebuild and the excavation of new, deeper tunnels, the North South Line has now resumed operations at the Town Hall station. This marks a milestone in the city's infrastructure enhancement, promising improved connectivity and convenience for its residents.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p>The newly built station boasts advanced facilities and improved accessibility, ensuring a seamless interchange between the North South and East West Lines. The completion of the East West Line is anticipated to further streamline citywide transportation and foster economic growth by connecting key districts within Aurora.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <p>The North South Line at Town Hall station now boasts a range of state-of-the-art amenities following its reopening, including high-speed escalators, interactive information kiosks, an automated ticketing system, and robust security measures. These enhancements have significantly elevated the station's functionality and safety standards. The East West Line is expected to be fully operational by late 2025, which will further enhance Aurora's transportation infrastructure and stimulate economic growth by linking critical urban areas.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-lg">
+            <img src="../images/resources/townhall.png" alt="Town Hall" class="rounded-lg">
+        </div>
+    </div>
+</div>
+<footer class="bg-white shadow-lg mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-2 text-center text-gray-500">
+        <p>&copy; 2024 City Loopers</p>
+    </div>
+</footer>
 </body>
 </html>
