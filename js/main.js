@@ -1,68 +1,103 @@
 
 const lines = ['north-south', 'east-west', 'north-west', 'north-east', 'south-east', 'south-west'];
 
-/**
- * Initialize the navbar with links based on the current page and 'lines' array.
- *
- * @param {} 
- * @return {}
- */
-window.onload = function () {
+function initNavbar() {
     const navbar = document.getElementById('navbar');
-    const currentPage = window.location.pathname.split('/').pop().split('.').shift();
-    const isLinePage = currentPage.startsWith('line');
-    const navHTML = ['<li>City Loopers</li>',
-        `<li><a href="${isLinePage ? './' : '../'}index.html" ${currentPage === 'index' ? 'style="font-weight: bold"' : ''}>Home</a></li>`,
-        `<li><a href="${isLinePage ? './' : '../'}status.html" ${currentPage === 'status' ? 'style="font-weight: bold"' : ''}>MRT Status</a></li>`,
-        `<li><a href="${isLinePage ? './' : '../'}apply.html" ${currentPage === 'apply' ? 'style="font-weight: bold"' : ''}>Apply</a></li>`,
-        `<li><a href="http://194.153.216.151:25729/"}>Map</a></li>`,
-        '<div class="dropdown">',
-        '  <button class="dropbtn">Lines 🞃</button>',
-        '  <div class="dropdown-content">'];
-    for (let i = 0; i < lines.length; ++i) {
-        const line = lines[i];
+    if (!navbar) return;
+
+    const currentPage = window.location.pathname.split('/').pop().replace('.html', '');
+    const isLinesDirectory = window.location.pathname.includes('/lines/');
+
+    const navLinks = [
+        { text: 'Home', href: 'index.html' },
+        { text: 'MRT Status', href: 'status.html' },
+        { text: 'Apply', href: 'apply.html' },
+        { text: 'Map', href: 'http://194.153.216.151:25729/', external: true },
+    ];
+
+    let navHTML = '';
+    navLinks.forEach(link => {
+        const isActive = currentPage === link.href.replace('.html', '');
+        const path = isLinesDirectory && !link.external ? '../' : './';
+        navHTML += `
+            <a href="${link.external ? '' : path}${link.href}"
+               class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300 ${isActive ? 'text-blue-500 border-b-4 border-blue-500' : ''}"
+               ${link.external ? 'target="_blank"' : ''}>
+               ${link.text}
+            </a>
+        `;
+    });
+
+    // Lines Dropdown
+    navHTML += `
+        <div class="relative group">
+            <button class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500 transition duration-300">
+                Lines <i class="fas fa-chevron-down fa-xs"></i>
+            </button>
+            <div class="absolute hidden bg-white shadow-lg rounded-md mt-2 py-2 w-48 group-hover:block">
+    `;
+    lines.forEach(line => {
         const lineName = line.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
-        addStationElements(line)
-        navHTML.push(`<a href="${isLinePage ? './' : '../'}lines/${line}.html" ${line === currentPage ? 'style="font-weight: bold"' : ''}>${lineName} Line</a>`);
-    }
-    navHTML.push('  </div>', '</div>');
-    navbar.innerHTML = navHTML.join('');
+        const isActive = currentPage === line;
+        const path = isLinesDirectory ? '' : './lines/';
+        navHTML += `<a href="${path}${line}.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-blue-500 hover:text-white ${isActive ? 'font-bold' : ''}">${lineName} Line</a>`;
+    });
+    navHTML += `</div></div>`;
+
+    navbar.innerHTML = navHTML;
 }
 
 const footer = document.querySelector('footer');
 document.addEventListener('DOMContentLoaded', function() {
+    initNavbar();
+
+    // Line status updates
     document.querySelectorAll('.line-status').forEach(function(lineStatus) {
-        const line = lineStatus.id.split('-')[1]+'-'+lineStatus.id.split('-')[2];
-        console.log(line)
+        const line = lineStatus.id.split('-')[2] + '-' + lineStatus.id.split('-')[3];
         const status = getLineStatus(line);
-        lineStatus.className = 'line-status';
-        lineStatus.classList.add(status);
-        lineStatus.textContent = {
-            'good': 'Good Service',
-            'bus-replace': 'Works Alert',
-            'suspended': 'Suspended'
-        }[status];
+
+        let statusText = '';
+        let iconClass = '';
+        let textClass = '';
+
+        switch(status) {
+            case 'good':
+                statusText = 'Good Service';
+                iconClass = 'fas fa-check-circle text-green-500';
+                textClass = 'text-green-500';
+                break;
+            case 'bus-replace':
+                statusText = 'Works Alert';
+                iconClass = 'fas fa-exclamation-triangle text-yellow-500';
+                textClass = 'text-yellow-500';
+                break;
+            case 'suspended':
+                statusText = 'Suspended';
+                iconClass = 'fas fa-times-circle text-red-500';
+                textClass = 'text-red-500';
+                break;
+        }
+
+        lineStatus.innerHTML = `<i class="${iconClass} mr-2"></i><span class="${textClass}">${statusText}</span>`;
     });
-    footer.innerHTML = `
-    <div class="grid-container ">
-        <div class="box">
 
-        </div>
-        <div class="box">
-            <p>
-                © 2024 City Loopers
-            </p>
-        </div>
-        <div class="box">
+    // Add station elements on line pages
+    const linePage = document.getElementById('line-page');
+    if (linePage) {
+        const line = linePage.dataset.line;
+        if (line) {
+            addStationElements(line);
+        }
+    }
 
-        </div>
-      
-    </div>
-`;
-
-},
-
-)
+    if (footer) {
+        footer.innerHTML = `
+            <div class="max-w-6xl mx-auto px-4 py-6 text-center text-white">
+                <p>&copy; 2024 City Loopers. All Rights Reserved.</p>
+            </div>
+        `;
+    }
+});
 
 /**
  * Retrieves the status of a given transportation line.
@@ -107,7 +142,10 @@ function addStationElements(line) {
 }
 
 function getStationsForLine(line) {
-    const stationsUrl = `../lines/stations/${line}.json`;
+    const isLinesDirectory = window.location.pathname.includes('/lines/');
+    const path = isLinesDirectory ? './stations/' : './lines/stations/';
+    const stationsUrl = `${path}${line}.json`;
+
     return fetch(stationsUrl)
         .then(response => {
             if (!response.ok) {

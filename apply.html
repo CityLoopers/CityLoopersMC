@@ -1,69 +1,112 @@
-<!-- new index.html, not ready yet though-->
-<!-- WIP -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta charset="utf-8">
-    <title>MRT Status</title>
+    <title>Apply for Builder - City Loopers</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="icon" href="./images/resources/Favicon.png" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="City Loopers MRT status">
-
     <script src="./js/main.js" defer></script>
-
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 text-gray-800">
 
-<nav class="bg-white shadow-lg">
-    <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between">
-            <div class="flex space-x-7">
-                <div>
-                    <!-- Website Logo -->
-                    <a href="/" class="flex items-center py-4 px-2">
-                        <img src="./images/resources/Favicon.png" alt="Logo" class="h-8 w-8 mr-2">
-                        <span class="font-semibold text-gray-500 text-lg">City Loopers</span>
-                    </a>
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="index.html" class="flex items-center py-4 px-2">
+                            <img src="./images/resources/Favicon.png" alt="Logo" class="h-8 w-8 mr-2">
+                            <span class="font-semibold text-gray-500 text-lg">City Loopers</span>
+                        </a>
+                    </div>
                 </div>
-                <!-- Primary Navbar items -->
                 <div class="hidden md:flex items-center space-x-1" id="navbar">
+                    <!-- Navbar links are inserted here by main.js -->
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
-<div class="container mx-auto p-4">
-    <h1 class="text-4xl font-bold text-center my-8">City Loopers</h1> <!-- place image of server behind -->
-    <div class="bg-white p-6 rounded-lg shadow-lg">
-        <h2 class="text-2xl font-bold mb-2">Application Form for Builder Rank</h2>
-        <p>Thank you for your interest in joining our community! To apply for Builder rank on City Loopers MC Server, please fill out the form below. Please note that all applicants must meet the following requirements:</p>
-        <ul class="list-disc list-inside my-4">
-            <li>Have built and contributed to the server in a meaningful way, either through the creation of new structures or the improvement of existing ones.</li>
-            <li><b>OR</b> Have a minimum of 1 year of active participation in the server.</li>
-            <li><b>AND</b> Have a positive and respectful attitude towards other players, and be willing to contribute to the community in a meaningful way.</li>
-            <li><b>AND</b> Have demonstrated a willingness to follow and adhere to the server's rules and regulations.</li>
-        </ul>
-        <p>Please note that this is a subjective process and we reserve the right to decline any application for any reason.</p>
-        <form method="post" action="mailto:contact@cityloopersmc.com" class="mt-4">
-            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
-            <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-            <label for="email" class="block text-gray-700 text-sm font-bold mb-2 mt-4">Email:</label>
-            <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-            <label for="discord" class="block text-gray-700 text-sm font-bold mb-2 mt-4">Discord Name:</label>
-            <input type="text" id="discord" name="discord" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
-            <label for="reason" class="block text-gray-700 text-sm font-bold mb-2 mt-4">Reason for Applying:</label>
-            <textarea id="reason" name="reason" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
-            <input type="submit" value="Submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-4">
-        </form>
-    </div>
-</div>
-<footer class="bg-white shadow-lg mt-8">
-    <div class="max-w-6xl mx-auto px-4 py-2 text-center text-gray-500">
-        <p>&copy; 2024 City Loopers</p>
-    </div>
-</footer>
+    <header class="bg-gray-800 text-white text-center py-12">
+        <div class="container mx-auto">
+            <h1 class="text-4xl font-bold">Join Our Build Team</h1>
+            <p class="text-lg mt-2">Ready to make your mark on the City Loopers Minecraft server? Apply for the Builder rank today!</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8">
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4">Application Requirements</h2>
+            <p class="mb-4">To apply for the Builder rank, you must meet the following criteria:</p>
+            <ul class="list-disc list-inside space-y-2 mb-6">
+                <li>Meaningful contributions to the server through new structures or improvements.</li>
+                <li><b>OR</b> at least one year of active participation on the server.</li>
+                <li>A positive and respectful attitude towards all players.</li>
+                <li>A commitment to following our server's rules and regulations.</li>
+            </ul>
+            <p class="text-sm text-gray-600 mb-6">Please note: The application process is subjective, and we reserve the right to decline any application.</p>
+
+            <form id="apply-form" method="post" action="mailto:contact@cityloopersmc.com" enctype="text/plain">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <label for="discord" class="block text-gray-700 text-sm font-bold mb-2">Discord Name:</label>
+                    <input type="text" id="discord" name="discord" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                </div>
+                <div class="mt-6">
+                    <label for="reason" class="block text-gray-700 text-sm font-bold mb-2">Reason for Applying:</label>
+                    <textarea id="reason" name="reason" rows="5" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required></textarea>
+                </div>
+                <div class="mt-6">
+                    <button type="submit" class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300">
+                        Submit Application
+                    </button>
+                </div>
+            </form>
+            <div id="confirmation-message" class="hidden mt-6 p-4 bg-green-100 text-green-800 rounded-lg">
+                Thank you for your application! We will review it and get back to you shortly.
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white mt-8">
+        <div class="max-w-6xl mx-auto px-4 py-6 text-center">
+            <p>&copy; 2024 City Loopers. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('apply-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default mailto action
+
+            // Here you would normally send the form data to a server.
+            // Since we are using mailto, we can just show the confirmation.
+
+            document.getElementById('confirmation-message').classList.remove('hidden');
+
+            // Optionally, you can still trigger the mailto link after a delay
+            const form = e.target;
+            const mailtoLink = `${form.action}?subject=Builder Application&body=` +
+                `Name: ${form.name.value}%0D%0A` +
+                `Email: ${form.email.value}%0D%0A` +
+                `Discord: ${form.discord.value}%0D%0A` +
+                `Reason: ${form.reason.value}`;
+
+            setTimeout(() => {
+                window.location.href = mailtoLink;
+            }, 1000);
+        });
+    </script>
+
 </body>
 </html>
