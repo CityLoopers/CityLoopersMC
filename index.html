@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <title>MRT Status</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="./images/resources/Favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="City Loopers MRT status">
@@ -14,106 +14,131 @@
     <script src="./js/main.js" defer></script>
 
 </head>
-<body>
+<body class="bg-gray-100">
 
-<ul class="nav" id="navbar"> </ul>
-<p><strong></strong></p>
-<h1>City Loopers</h1> <!-- place image of server behind -->
-<div class="grid-container">
-    <div class="box">
-        <h2>Welcome to City Loopers: Your Journey into Melbourne's Transport World!</h2>
-        <p>
-            Step aboard and immerse yourself in City Loopers, the ultimate destination for transport enthusiasts in Melbourne. Get ready to explore the fascinating world of trams, trains, buses, and more, as we embark on a thrilling adventure through the city's bustling transport landscape.
-            
-            Discover a vibrant community where passionate individuals like you come together to discuss, share, and celebrate all aspects of Melbourne's transportation. Engage in lively conversations about infrastructure, historical anecdotes, route discussions, and the latest news and developments shaping the city's transport scene.
-            
-            At City Loopers, we foster an atmosphere of respect, open-mindedness, and camaraderie. Join us as we build friendships, exchange knowledge, and geek out over our shared love for everything on the move. Whether you're a seasoned enthusiast or just starting your transport journey, you'll find a welcoming space to connect and learn from fellow members who share your passion.
-            
-            Stay tuned for informative resources, captivating photography, engaging events, and thought-provoking discussions. We're dedicated to providing a platform that allows you to indulge in your transport obsession, expand your understanding, and contribute your unique insights to the community.
-            
-            Remember to familiarise yourself with our community guidelines to ensure a positive and enjoyable experience for all. Our committed team of moderators is here to maintain a harmonious environment and address any questions or concerns you may have.
-            
-            So, grab your virtual ticket and join us on this incredible ride through Melbourne's transport world. City Loopers awaits, ready to connect you with fellow enthusiasts and take your passion to new heights!
-            
-            Safe travels!
-        </p>
+<nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+                <div>
+                    <!-- Website Logo -->
+                    <a href="#" class="flex items-center py-4 px-2">
+                        <img src="./images/resources/Favicon.png" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="font-semibold text-gray-500 text-lg">City Loopers</span>
+                    </a>
+                </div>
+                <!-- Primary Navbar items -->
+                <div class="hidden md:flex items-center space-x-1" id="navbar">
+                </div>
+            </div>
+        </div>
     </div>
+</nav>
+
+<div class="container mx-auto p-4">
+    <h1 class="text-4xl font-bold text-center my-8">City Loopers</h1> <!-- place image of server behind -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-2">Welcome to City Loopers: Your Journey into Melbourne's Transport World!</h2>
+            <p>
+                Step aboard and immerse yourself in City Loopers, the ultimate destination for transport enthusiasts in Melbourne. Get ready to explore the fascinating world of trams, trains, buses, and more, as we embark on a thrilling adventure through the city's bustling transport landscape.
+            </p>
+            <p>
+                Discover a vibrant community where passionate individuals like you come together to discuss, share, and celebrate all aspects of Melbourne's transportation. Engage in lively conversations about infrastructure, historical anecdotes, route discussions, and the latest news and developments shaping the city's transport scene.
+            </p>
+            <p>
+                At City Loopers, we foster an atmosphere of respect, open-mindedness, and camaraderie. Join us as we build friendships, exchange knowledge, and geek out over our shared love for everything on the move. Whether you're a seasoned enthusiast or just starting your transport journey, you'll find a welcoming space to connect and learn from fellow members who share your passion.
+            </p>
+            <p>
+                Stay tuned for informative resources, captivating photography, engaging events, and thought-provoking discussions. We're dedicated to providing a platform that allows you to indulge in your transport obsession, expand your understanding, and contribute your unique insights to the community.
+            </p>
+            <p>
+                Remember to familiarise yourself with our community guidelines to ensure a positive and enjoyable experience for all. Our committed team of moderators is here to maintain a harmonious environment and address any questions or concerns you may have.
+            </p>
+            <p>
+                So, grab your virtual ticket and join us on this incredible ride through Melbourne's transport world. City Loopers awaits, ready to connect you with fellow enthusiasts and take your passion to new heights!
+            </p>
+            <p>
+                Safe travels!
+            </p>
+        </div>
+    </div>
+    <section id="server-info" class="mt-8">
+        <h2 class="text-3xl font-bold text-center my-8">Server Information</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="col-span-1 md:col-span-2 lg:col-span-3 bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-2xl font-bold mb-2">Builder Ranks</h2>
+                <p>The following are the builder ranks and their requirements.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Guest</h2>
+                <p>Anyone can join the server and explore the world, but cannot build or modify anything. To apply for a builder rank, guests must fill out a form on the server website and provide some examples of their previous builds.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Builder</h2>
+                <p>Builders can build anywhere in the world, as long as they respect the server rules and guidelines. They can also use basic commands such as /warp, /home, /tpa, etc. </p>
+                <p>To advance to the next rank, builders must build at least 10 structures and receive positive feedback from the staff and other players.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Architect</h2>
+                <p>Architects can build anywhere in the world, as long as they respect the existing theme and style. They can also use advanced commands such as /worldedit, /voxelsniper, /copy, /paste, etc.</p>
+                <p>To advance to the next rank, architects must build at least 20 structures and create some impressive landmarks or monuments that showcase their skills and creativity.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Engineer</h2>
+                <p>Engineers are responsible for designing and maintaining the transport infrastructure of the world, such as roads, bridges, railways, subways, airports, etc. They can use all the commands available to architects, as well as some special ones such as /train, /cart, /sign, etc.</p>
+                <p> To advance to the next rank, engineers must build at least 30 structures and connect them with various modes of transport.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Mayor</h2>
+                <p>Mayors are the leaders and managers of the world. They can build anywhere and use any commands they want. They can also approve or reject new builds, promote other players to  builder, etc. </p>
+                <p>To become a mayor, a player must be nominated by another mayor and approved by a majority vote of all the mayors.</p>
+            </div>
+        </div>
+    </section>
+    <section id="build-restrictions" class="mt-8">
+        <h2 class="text-3xl font-bold text-center my-8">Build Restrictions</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Definition of Towns</h2>
+                <p>Towns are defined as any collection of 3 or more buildings built by a single builder</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Minimum distance between towns</h2>
+                <p>Without express permission of another town's government, a town may not build within 300 blocks of another town and is discouraged from building within 500 blocks of another town.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Formation of Local Government Areas</h2>
+                <p>Local Government Areas may be formed to allow multiple towns to build in close proximity to each other and provide their own public transportation services. If forming an LGA, please alert the State Government.</p>
+                <p>This is an option for towns that want to cooperate and collaborate with each other on a larger scale.            </p>
+                <p>A Local Government Area (LGA) is a group of towns that agree to form a regional alliance and share some common goals and interests</p>
+                <p>An LGA can have its own name, flag, council, policies, projects and services
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Transportation connections to Aurora</h2>
+                <p>Aurora is the main and largest city of the server. It is expected that your town has either a road or rail connection to Aurora.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Claiming inactive towns</h2>
+                <p>Inactive Towns (where the owner hasn’t logged in for more than 3 months) may be claimed by another user by submitting a ticket on the discord server.
+                </p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">State government authority</h2>
+                <p>The State Government (Staff Team) has ultimate jurisdiction over all towns and builds within towns and can override planning decisions</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h2 class="text-xl font-bold">Town proposal submission</h2>
+                <p>It is expected (but not required) that members submit proposals for a town before building</p>
+            </div>
+        </div>
+    </section>
 </div>
-<br>
-<section id="server-info">
-    <h2>Server Information</h2>
-    <div class="grid-container">
-        <div class="hero"><h2>Builder Ranks</h2></div>
-        <div class="box"><p>The following are the builder ranks and their requirements.</p></div>
-        <br>
-        <div class="box">
-            <h2>Guest</h2>
-            <p>Anyone can join the server and explore the world, but cannot build or modify anything. To apply for a builder rank, guests must fill out a form on the server website and provide some examples of their previous builds.</p>
-        </div>
-        <div class="box">
-            <h2>Builder</h2>
-            <p>Builders can build anywhere in the world, as long as they respect the server rules and guidelines. They can also use basic commands such as /warp, /home, /tpa, etc. </p>
-            <p>To advance to the next rank, builders must build at least 10 structures and receive positive feedback from the staff and other players.</p>
-        </div>
-        <div class="box">
-            <h2>Architect</h2>
-            <p>Architects can build anywhere in the world, as long as they respect the existing theme and style. They can also use advanced commands such as /worldedit, /voxelsniper, /copy, /paste, etc.</p>
-            <p>To advance to the next rank, architects must build at least 20 structures and create some impressive landmarks or monuments that showcase their skills and creativity.</p>
-        </div>
-        <div class="box">
-            <h2>Engineer</h2>
-            <p>Engineers are responsible for designing and maintaining the transport infrastructure of the world, such as roads, bridges, railways, subways, airports, etc. They can use all the commands available to architects, as well as some special ones such as /train, /cart, /sign, etc.</p>
-            <p> To advance to the next rank, engineers must build at least 30 structures and connect them with various modes of transport.</p>
-        </div>
-        <div class="box">
-            <h2>Mayor</h2>
-            <p>Mayors are the leaders and managers of the world. They can build anywhere and use any commands they want. They can also approve or reject new builds, promote other players to  builder, etc. </p>
-            <p>To become a mayor, a player must be nominated by another mayor and approved by a majority vote of all the mayors.</p>
-        </div>
+<footer class="bg-white shadow-lg mt-8">
+    <div class="max-w-6xl mx-auto px-4 py-2 text-center text-gray-500">
+        <p>&copy; 2024 City Loopers</p>
     </div>
-</section>
-<br>
-<section id="build-restrictions">
-    <h2>Build Restrictions</h2>
-    <div class="grid-container">
-        <div class="box">
-            <h2>Definition of Towns</h2>
-            <p>Towns are defined as any collection of 3 or more buildings built by a single builder</p>
-        </div>
-        <div class="box">
-            <h2>Minimum distance between towns</h2>
-            <p>Without express permission of another town's government, a town may not build within 300 blocks of another town and is discouraged from building within 500 blocks of another town.</p>
-        </div>
-        <div class="box">
-            <h2>Formation of Local Government Areas</h2>
-            <p>Local Government Areas may be formed to allow multiple towns to build in close proximity to each other and provide their own public transportation services. If forming an LGA, please alert the State Government.</p>
-            <p>This is an option for towns that want to cooperate and collaborate with each other on a larger scale.            </p>
-            <p>A Local Government Area (LGA) is a group of towns that agree to form a regional alliance and share some common goals and interests</p>
-            <p>An LGA can have its own name, flag, council, policies, projects and services
-            </p>
-        </div>
-        <div class="box">
-            <h2>Transportation connections to Aurora</h2>
-            <p>Aurora is the main and largest city of the server. It is expected that your town has either a road or rail connection to Aurora.</p>
-        </div>
-        <div class="box">
-            <h2>Claiming inactive towns</h2>
-            <p>Inactive Towns (where the owner hasn’t logged in for more than 3 months) may be claimed by another user by submitting a ticket on the discord server.
-            </p>
-        </div>
-        <div class="box">
-            <h2>State government authority</h2>
-            <p>The State Government (Staff Team) has ultimate jurisdiction over all towns and builds within towns and can override planning decisions</p>
-        </div>
-        <div class="box">
-            <h2>Town proposal submission</h2>
-            <p>It is expected (but not required) that members submit proposals for a town before building</p>
-        </div>
-    </div>
-</section>
-
-<footer>
-    
 </footer>
 </body>
 </html>

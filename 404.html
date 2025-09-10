@@ -3,24 +3,38 @@
 <head>
     <meta charset="utf-8">
     <title>MRT Status</title>
-    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="icon" href="images/resources/Favicon.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="404 - City Loopers">
     <script src="./js/main.js" defer></script>
 </head>
-<body>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<ul class="nav" id="navbar"> </ul>
-<h1>Page not found</h1>
-<p>Error 404</p>
-<p>Check the URL for errors</p>
-<div class="container">
-    <div class="center">
-        <form method="get" action="index.html">
-            <button class="btn ">Home</button>
-        </form>
+<body class="bg-gray-100">
+<nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between">
+            <div class="flex space-x-7">
+                <div>
+                    <!-- Website Logo -->
+                    <a href="/" class="flex items-center py-4 px-2">
+                        <img src="/images/resources/Favicon.png" alt="Logo" class="h-8 w-8 mr-2">
+                        <span class="font-semibold text-gray-500 text-lg">City Loopers</span>
+                    </a>
+                </div>
+                <!-- Primary Navbar items -->
+                <div class="hidden md:flex items-center space-x-1" id="navbar">
+                </div>
+            </div>
+        </div>
     </div>
+</nav>
+<div class="container mx-auto p-4 text-center">
+    <h1 class="text-4xl font-bold my-8">Page not found</h1>
+    <p class="text-xl my-4">Error 404</p>
+    <p class="text-lg my-4">Check the URL for errors</p>
+    <a href="/" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Home
+    </a>
 </div>
 </body>
 </html>
